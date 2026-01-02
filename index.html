@@ -6,7 +6,7 @@
     <title>Sponsored Access to RULEMATCH | DLT Finance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg-dark: #1a2a3a;
@@ -18,8 +18,8 @@
             --color-text-secondary: #94a3b8;
             --color-text-muted: #64748b;
             --color-border: #334155;
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --color-navy: #1e3a5f;
+            --font-main: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
@@ -33,11 +33,12 @@
         }
 
         body {
-            font-family: var(--font-body);
+            font-family: var(--font-main);
             background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-darker) 100%);
             color: var(--color-text-primary);
             line-height: 1.6;
             min-height: 100vh;
+            font-weight: 400;
         }
 
         /* Header */
@@ -58,15 +59,9 @@
             color: var(--color-text-primary);
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 600;
+        .logo-svg {
+            height: 36px;
+            width: auto;
         }
 
         .header-badges {
@@ -84,6 +79,7 @@
             border-radius: 6px;
             font-size: 0.8rem;
             color: var(--color-text-secondary);
+            font-weight: 500;
         }
 
         .badge-icon {
@@ -110,10 +106,11 @@
             font-size: 0.875rem;
             color: var(--color-accent-light);
             margin-bottom: 2rem;
+            font-weight: 500;
         }
 
         .hero h1 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             line-height: 1.1;
@@ -129,6 +126,7 @@
             color: var(--color-text-secondary);
             max-width: 700px;
             margin: 0 auto 3rem;
+            font-weight: 400;
         }
 
         .hero-cta {
@@ -160,9 +158,15 @@
             border-top: 1px solid var(--color-border);
         }
 
-        .partner-logo {
-            height: 32px;
-            opacity: 0.9;
+        .partner-logo-svg {
+            height: 24px;
+            width: auto;
+        }
+
+        .partner-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
         }
 
         .partner-divider {
@@ -189,8 +193,9 @@
 
         .section-title {
             text-align: center;
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 3rem;
         }
 
@@ -231,14 +236,16 @@
         }
 
         .benefit-card h3 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 1.125rem;
+            font-weight: 600;
             margin-bottom: 0.75rem;
         }
 
         .benefit-card p {
             color: var(--color-text-secondary);
             font-size: 0.95rem;
+            font-weight: 400;
         }
 
         /* How It Works Section */
@@ -284,10 +291,11 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .architecture-box-title {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-weight: 600;
         }
 
@@ -306,8 +314,9 @@
         }
 
         .architecture-detail h4 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 0.95rem;
+            font-weight: 600;
             color: var(--color-accent-light);
             margin-bottom: 0.5rem;
         }
@@ -315,6 +324,7 @@
         .architecture-detail p {
             color: var(--color-text-secondary);
             font-size: 0.9rem;
+            font-weight: 400;
         }
 
         /* Venue Details */
@@ -342,14 +352,16 @@
         }
 
         .venue-info h3 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
         .venue-info p {
             color: var(--color-text-secondary);
             margin-bottom: 1.5rem;
+            font-weight: 400;
         }
 
         .venue-stats {
@@ -365,7 +377,7 @@
         }
 
         .venue-stat-value {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--color-accent);
@@ -375,6 +387,7 @@
             font-size: 0.85rem;
             color: var(--color-text-muted);
             margin-top: 0.25rem;
+            font-weight: 400;
         }
 
         .venue-features {
@@ -400,6 +413,7 @@
         .venue-feature-text {
             color: var(--color-text-secondary);
             font-size: 0.95rem;
+            font-weight: 400;
         }
 
         /* Target Clients */
@@ -437,8 +451,9 @@
         }
 
         .client-type h4 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 1rem;
+            font-weight: 600;
         }
 
         /* CTA Section */
@@ -457,8 +472,9 @@
         }
 
         .cta-card h2 {
-            font-family: var(--font-display);
+            font-family: var(--font-main);
             font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
@@ -468,6 +484,7 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .cta-button {
@@ -513,9 +530,9 @@
             text-decoration: none;
         }
 
-        .footer-logo-icon {
-            width: 32px;
-            height: 32px;
+        .footer-logo-svg {
+            height: 24px;
+            width: auto;
         }
 
         .footer-links {
@@ -527,6 +544,7 @@
             color: var(--color-text-muted);
             text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 500;
             transition: color 0.2s ease;
         }
 
@@ -537,6 +555,7 @@
         .footer-copy {
             color: var(--color-text-muted);
             font-size: 0.85rem;
+            font-weight: 400;
         }
 
         /* Responsive */
@@ -573,13 +592,10 @@
     <!-- Header -->
     <header>
         <a href="https://www.dlt-finance.com" class="logo">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#a78bfa" opacity="0.2"/>
-                <path d="M20 4L4 12l16 8 16-8-16-8z" fill="#a78bfa"/>
-                <path d="M4 12v16l16 8V20L4 12z" fill="#7c3aed"/>
-                <path d="M36 12v16l-16 8V20l16-8z" fill="#6d28d9"/>
+            <svg class="logo-svg" viewBox="0 0 285 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M55.82 40V11.8H65.62C73.54 11.8 79.54 16.16 79.54 25.08C79.54 34.08 74.1 40 66.18 40H55.82ZM61.58 35.12H64.82C70.46 35.12 73.58 31.92 73.58 25.36C73.58 18.96 69.86 16.68 64.82 16.68H61.58V35.12ZM84.9216 40V11.8H90.7216V35.12H104.562V40H84.9216ZM110.476 40V16.68H102.516V11.8H124.636V16.68H116.236V40H110.476ZM133.851 40V11.8H153.531V16.68H139.611V24.28H152.731V29.12H139.611V40H133.851ZM157.11 16.44V11.8H162.83V16.44H157.11ZM157.39 40V19.8H162.59V40H157.39ZM167.859 40V19.8H172.899V23C174.339 20.72 176.699 19.48 179.259 19.48C183.299 19.48 186.099 21.92 186.099 26.76V40H180.939V28.08C180.939 25.32 179.659 23.8 177.499 23.8C174.419 23.8 173.059 26.6 173.059 28.8V40H167.859ZM196.661 40.48C192.581 40.48 189.981 38.32 189.981 34.88C189.981 31.44 192.461 29.48 197.821 28.76C201.741 28.28 203.181 27.52 203.181 25.96C203.181 24.44 201.901 23.6 199.661 23.6C197.101 23.6 195.661 24.64 195.301 26.84H190.261C190.981 22.24 194.541 19.48 199.781 19.48C205.301 19.48 208.501 22.44 208.501 27.56V40H203.541V36.92C202.181 39.32 199.901 40.48 196.661 40.48ZM198.101 36.6C200.861 36.6 203.501 34.48 203.501 31.4V30.32C202.261 31.08 201.141 31.44 199.301 31.72C196.261 32.28 195.261 32.84 195.261 34.48C195.261 35.88 196.301 36.6 198.101 36.6ZM213.484 40V19.8H218.524V23C219.964 20.72 222.324 19.48 224.884 19.48C228.924 19.48 231.724 21.92 231.724 26.76V40H226.564V28.08C226.564 25.32 225.284 23.8 223.124 23.8C220.044 23.8 218.684 26.6 218.684 28.8V40H213.484ZM245.526 40.32C239.406 40.32 235.646 35.72 235.646 29.92C235.646 24.04 239.286 19.48 245.446 19.48C251.366 19.48 254.686 23.04 255.046 27.8H249.646C249.566 25.08 247.846 23.64 245.646 23.64C242.806 23.64 240.926 25.96 240.926 29.72C240.926 33.72 242.846 36.16 245.686 36.16C248.006 36.16 249.766 34.68 249.926 32.44H255.286C254.286 37.16 251.326 40.32 245.526 40.32ZM268.427 40.32C262.427 40.32 258.107 36.52 258.107 29.92C258.107 24.08 261.787 19.48 267.907 19.48C274.387 19.48 278.307 23.6 277.827 31H263.387C263.507 34.04 265.427 36.16 268.427 36.16C271.027 36.16 272.427 34.8 272.987 33.04H278.347C277.027 37.12 273.947 40.32 268.427 40.32ZM263.427 27.68H272.507C272.347 24.96 270.387 23.08 267.907 23.08C265.507 23.08 263.587 24.92 263.427 27.68Z" fill="white"/>
+                <path d="M0 26.1096L17.0516 2L45 11.1915V40.5784L17.2059 50L0 26.1096Z" fill="white"/>
             </svg>
-            <span class="logo-text">DLT Finance</span>
         </a>
         <div class="header-badges">
             <div class="badge">
@@ -617,13 +633,12 @@
             </svg>
         </a>
         <div class="partners">
-            <svg class="partner-logo" viewBox="0 0 150 32" fill="currentColor">
-                <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#fff">DLT Finance</text>
+            <svg class="partner-logo-svg" viewBox="0 0 285 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M55.82 40V11.8H65.62C73.54 11.8 79.54 16.16 79.54 25.08C79.54 34.08 74.1 40 66.18 40H55.82ZM61.58 35.12H64.82C70.46 35.12 73.58 31.92 73.58 25.36C73.58 18.96 69.86 16.68 64.82 16.68H61.58V35.12ZM84.9216 40V11.8H90.7216V35.12H104.562V40H84.9216ZM110.476 40V16.68H102.516V11.8H124.636V16.68H116.236V40H110.476ZM133.851 40V11.8H153.531V16.68H139.611V24.28H152.731V29.12H139.611V40H133.851ZM157.11 16.44V11.8H162.83V16.44H157.11ZM157.39 40V19.8H162.59V40H157.39ZM167.859 40V19.8H172.899V23C174.339 20.72 176.699 19.48 179.259 19.48C183.299 19.48 186.099 21.92 186.099 26.76V40H180.939V28.08C180.939 25.32 179.659 23.8 177.499 23.8C174.419 23.8 173.059 26.6 173.059 28.8V40H167.859ZM196.661 40.48C192.581 40.48 189.981 38.32 189.981 34.88C189.981 31.44 192.461 29.48 197.821 28.76C201.741 28.28 203.181 27.52 203.181 25.96C203.181 24.44 201.901 23.6 199.661 23.6C197.101 23.6 195.661 24.64 195.301 26.84H190.261C190.981 22.24 194.541 19.48 199.781 19.48C205.301 19.48 208.501 22.44 208.501 27.56V40H203.541V36.92C202.181 39.32 199.901 40.48 196.661 40.48ZM198.101 36.6C200.861 36.6 203.501 34.48 203.501 31.4V30.32C202.261 31.08 201.141 31.44 199.301 31.72C196.261 32.28 195.261 32.84 195.261 34.48C195.261 35.88 196.301 36.6 198.101 36.6ZM213.484 40V19.8H218.524V23C219.964 20.72 222.324 19.48 224.884 19.48C228.924 19.48 231.724 21.92 231.724 26.76V40H226.564V28.08C226.564 25.32 225.284 23.8 223.124 23.8C220.044 23.8 218.684 26.6 218.684 28.8V40H213.484ZM245.526 40.32C239.406 40.32 235.646 35.72 235.646 29.92C235.646 24.04 239.286 19.48 245.446 19.48C251.366 19.48 254.686 23.04 255.046 27.8H249.646C249.566 25.08 247.846 23.64 245.646 23.64C242.806 23.64 240.926 25.96 240.926 29.72C240.926 33.72 242.846 36.16 245.686 36.16C248.006 36.16 249.766 34.68 249.926 32.44H255.286C254.286 37.16 251.326 40.32 245.526 40.32ZM268.427 40.32C262.427 40.32 258.107 36.52 258.107 29.92C258.107 24.08 261.787 19.48 267.907 19.48C274.387 19.48 278.307 23.6 277.827 31H263.387C263.507 34.04 265.427 36.16 268.427 36.16C271.027 36.16 272.427 34.8 272.987 33.04H278.347C277.027 37.12 273.947 40.32 268.427 40.32ZM263.427 27.68H272.507C272.347 24.96 270.387 23.08 267.907 23.08C265.507 23.08 263.587 24.92 263.427 27.68Z" fill="white"/>
+                <path d="M0 26.1096L17.0516 2L45 11.1915V40.5784L17.2059 50L0 26.1096Z" fill="white"/>
             </svg>
             <span class="partner-divider">×</span>
-            <svg class="partner-logo" viewBox="0 0 180 32" fill="currentColor">
-                <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#a78bfa">RULEMATCH</text>
-            </svg>
+            <span class="partner-text">RULEMATCH</span>
         </div>
     </section>
 
@@ -865,13 +880,10 @@
     <footer>
         <div class="footer-content">
             <a href="https://www.dlt-finance.com" class="footer-logo">
-                <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#a78bfa" opacity="0.2"/>
-                    <path d="M20 4L4 12l16 8 16-8-16-8z" fill="#a78bfa"/>
-                    <path d="M4 12v16l16 8V20L4 12z" fill="#7c3aed"/>
-                    <path d="M36 12v16l-16 8V20l16-8z" fill="#6d28d9"/>
+                <svg class="footer-logo-svg" viewBox="0 0 285 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55.82 40V11.8H65.62C73.54 11.8 79.54 16.16 79.54 25.08C79.54 34.08 74.1 40 66.18 40H55.82ZM61.58 35.12H64.82C70.46 35.12 73.58 31.92 73.58 25.36C73.58 18.96 69.86 16.68 64.82 16.68H61.58V35.12ZM84.9216 40V11.8H90.7216V35.12H104.562V40H84.9216ZM110.476 40V16.68H102.516V11.8H124.636V16.68H116.236V40H110.476ZM133.851 40V11.8H153.531V16.68H139.611V24.28H152.731V29.12H139.611V40H133.851ZM157.11 16.44V11.8H162.83V16.44H157.11ZM157.39 40V19.8H162.59V40H157.39ZM167.859 40V19.8H172.899V23C174.339 20.72 176.699 19.48 179.259 19.48C183.299 19.48 186.099 21.92 186.099 26.76V40H180.939V28.08C180.939 25.32 179.659 23.8 177.499 23.8C174.419 23.8 173.059 26.6 173.059 28.8V40H167.859ZM196.661 40.48C192.581 40.48 189.981 38.32 189.981 34.88C189.981 31.44 192.461 29.48 197.821 28.76C201.741 28.28 203.181 27.52 203.181 25.96C203.181 24.44 201.901 23.6 199.661 23.6C197.101 23.6 195.661 24.64 195.301 26.84H190.261C190.981 22.24 194.541 19.48 199.781 19.48C205.301 19.48 208.501 22.44 208.501 27.56V40H203.541V36.92C202.181 39.32 199.901 40.48 196.661 40.48ZM198.101 36.6C200.861 36.6 203.501 34.48 203.501 31.4V30.32C202.261 31.08 201.141 31.44 199.301 31.72C196.261 32.28 195.261 32.84 195.261 34.48C195.261 35.88 196.301 36.6 198.101 36.6ZM213.484 40V19.8H218.524V23C219.964 20.72 222.324 19.48 224.884 19.48C228.924 19.48 231.724 21.92 231.724 26.76V40H226.564V28.08C226.564 25.32 225.284 23.8 223.124 23.8C220.044 23.8 218.684 26.6 218.684 28.8V40H213.484ZM245.526 40.32C239.406 40.32 235.646 35.72 235.646 29.92C235.646 24.04 239.286 19.48 245.446 19.48C251.366 19.48 254.686 23.04 255.046 27.8H249.646C249.566 25.08 247.846 23.64 245.646 23.64C242.806 23.64 240.926 25.96 240.926 29.72C240.926 33.72 242.846 36.16 245.686 36.16C248.006 36.16 249.766 34.68 249.926 32.44H255.286C254.286 37.16 251.326 40.32 245.526 40.32ZM268.427 40.32C262.427 40.32 258.107 36.52 258.107 29.92C258.107 24.08 261.787 19.48 267.907 19.48C274.387 19.48 278.307 23.6 277.827 31H263.387C263.507 34.04 265.427 36.16 268.427 36.16C271.027 36.16 272.427 34.8 272.987 33.04H278.347C277.027 37.12 273.947 40.32 268.427 40.32ZM263.427 27.68H272.507C272.347 24.96 270.387 23.08 267.907 23.08C265.507 23.08 263.587 24.92 263.427 27.68Z" fill="white"/>
+                    <path d="M0 26.1096L17.0516 2L45 11.1915V40.5784L17.2059 50L0 26.1096Z" fill="white"/>
                 </svg>
-                <span style="font-family: var(--font-display); font-weight: 600;">DLT Finance</span>
             </a>
             <div class="footer-links">
                 <a href="https://www.dlt-finance.com/legal">Legal</a>
