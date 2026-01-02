@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsored Access to RULEMATCH | DLT Finance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg-dark: #1a2a3a;
+            --color-bg-darker: #0f1a24;
+            --color-bg-card: #243447;
+            --color-accent: #a78bfa;
+            --color-accent-light: #c4b5fd;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #94a3b8;
+            --color-text-muted: #64748b;
+            --color-border: #334155;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-darker) 100%);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--color-bg-card);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        .badge-icon {
+            width: 20px;
+            height: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--color-accent-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: var(--color-bg-darker);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Partner Logos */
+        .partners {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .partner-logo {
+            height: 32px;
+            opacity: 0.9;
+        }
+
+        .partner-divider {
+            color: var(--color-text-muted);
+            font-size: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-label {
+            text-align: center;
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(167, 139, 250, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+        }
+
+        .benefit-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .architecture {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+
+        .architecture-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .architecture-box {
+            background: var(--color-bg-darker);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .architecture-box.highlight {
+            border-color: var(--color-accent);
+            background: rgba(167, 139, 250, 0.05);
+        }
+
+        .architecture-box-label {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .architecture-box-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+        }
+
+        .architecture-arrow {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+        }
+
+        .architecture-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .architecture-detail h4 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--color-accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .architecture-detail p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Venue Details */
+        .venue-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .venue-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .venue-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .venue-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .venue-info p {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .venue-stat {
+            background: var(--color-bg-darker);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .venue-stat-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .venue-stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .venue-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .venue-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .venue-feature-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .venue-feature-text {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Target Clients */
+        .target-clients {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .client-type {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .client-type:hover {
+            border-color: var(--color-accent);
+        }
+
+        .client-type-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 1rem;
+            color: var(--color-accent);
+        }
+
+        .client-type h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(167, 139, 250, 0.1) 100%);
+            border: 1px solid var(--color-accent);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .cta-card h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: var(--color-bg-darker);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--color-border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-primary);
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-text-primary);
+        }
+
+        .footer-copy {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header-badges {
+                display: none;
+            }
+            
+            .partners {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .partner-divider {
+                display: none;
+            }
+
+            .architecture-flow {
+                flex-direction: column;
+            }
+
+            .architecture-arrow {
+                transform: rotate(90deg);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="https://www.dlt-finance.com" class="logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#a78bfa" opacity="0.2"/>
+                <path d="M20 4L4 12l16 8 16-8-16-8z" fill="#a78bfa"/>
+                <path d="M4 12v16l16 8V20L4 12z" fill="#7c3aed"/>
+                <path d="M36 12v16l-16 8V20l16-8z" fill="#6d28d9"/>
+            </svg>
+            <span class="logo-text">DLT Finance</span>
+        </a>
+        <div class="header-badges">
+            <div class="badge">
+                <svg class="badge-icon" viewBox="0 0 20 14" fill="currentColor">
+                    <rect width="20" height="14" rx="1" fill="#000"/>
+                    <rect y="4.67" width="20" height="4.67" fill="#DD0000"/>
+                    <rect y="9.33" width="20" height="4.67" fill="#FFCE00"/>
+                </svg>
+                Made in Germany
+            </div>
+            <div class="badge">
+                <svg class="badge-icon" viewBox="0 0 20 14" fill="none">
+                    <rect width="20" height="14" rx="1" fill="#003399"/>
+                    <circle cx="10" cy="7" r="3" fill="#FFCC00"/>
+                </svg>
+                MiFID-Licensed
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            Sponsored Brokerage
+        </div>
+        <h1>Access <span>RULEMATCH</span> via DLT Finance</h1>
+        <p class="hero-subtitle">Trade on Switzerland's premier interbank crypto venue through a single, BaFin-regulated counterparty. No direct venue onboarding required.</p>
+        <a href="https://www.dlt-finance.com/contact" class="hero-cta">
+            Get Access
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+        <div class="partners">
+            <svg class="partner-logo" viewBox="0 0 150 32" fill="currentColor">
+                <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#fff">DLT Finance</text>
+            </svg>
+            <span class="partner-divider">×</span>
+            <svg class="partner-logo" viewBox="0 0 180 32" fill="currentColor">
+                <text x="0" y="24" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#a78bfa">RULEMATCH</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <p class="section-label">Your Benefits</p>
+        <h2 class="section-title">Why Access RULEMATCH via DLT Finance?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3>Ultra-Low Latency</h3>
+                <p>Execute trades with 25 microseconds median latency, powered by Nasdaq's institutional-grade matching engine technology.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>No Venue Onboarding</h3>
+                <p>Access RULEMATCH without direct membership. DLT Finance handles all venue requirements — you're trading in days, not months.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+                    </svg>
+                </div>
+                <h3>Capital Efficiency</h3>
+                <p>Trade on margin, not pre-funded capital. Continuous netting reduces collateral requirements. Only clearing margin must be posted.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/>
+                    </svg>
+                </div>
+                <h3>T+1 Settlement</h3>
+                <p>Off-exchange settlement via DLT Finance as your regulated central counterparty. Multilateral netting minimizes settlement transactions.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4"/>
+                        <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.97"/>
+                    </svg>
+                </div>
+                <h3>BaFin-Regulated</h3>
+                <p>Full MiFID II compliance through DLT Finance's German securities trading bank license. MiCA-ready for EU-wide passporting.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                </div>
+                <h3>Conflict-Free Execution</h3>
+                <p>DLT Finance has no proprietary trading desk. Your orders execute without internalization or conflict of interest.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">Sponsored Access Architecture</h2>
+        <div class="architecture">
+            <div class="architecture-flow">
+                <div class="architecture-box">
+                    <div class="architecture-box-label">Your Firm</div>
+                    <div class="architecture-box-title">Client</div>
+                </div>
+                <div class="architecture-arrow">→</div>
+                <div class="architecture-box highlight">
+                    <div class="architecture-box-label">Sponsored Broker</div>
+                    <div class="architecture-box-title">DLT Finance</div>
+                </div>
+                <div class="architecture-arrow">→</div>
+                <div class="architecture-box">
+                    <div class="architecture-box-label">Trading Venue</div>
+                    <div class="architecture-box-title">RULEMATCH</div>
+                </div>
+            </div>
+            <div class="architecture-details">
+                <div class="architecture-detail">
+                    <h4>Direct Technical Connection</h4>
+                    <p>Connect your systems directly to RULEMATCH via FIX or OUCH protocols — orders transmit straight to the venue without routing through DLT Finance's internal systems.</p>
+                </div>
+                <div class="architecture-detail">
+                    <h4>Clearing & Settlement</h4>
+                    <p>DLT Finance acts as your clearing counterparty. All trades settle T+1 through our regulated infrastructure. Your collateral stays off-exchange.</p>
+                </div>
+                <div class="architecture-detail">
+                    <h4>Risk Management</h4>
+                    <p>Pre-trade risk controls, margin monitoring, and kill-switch capabilities ensure you stay within defined parameters at all times.</p>
+                </div>
+                <div class="architecture-detail">
+                    <h4>Regulatory Coverage</h4>
+                    <p>Trade under DLT Finance's MiFID II license. We handle EMIR reporting, capital gains tax processing, and ongoing compliance obligations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Details -->
+    <section class="venue-details">
+        <p class="section-label">The Venue</p>
+        <h2 class="section-title">About RULEMATCH</h2>
+        <div class="venue-card">
+            <div class="venue-info">
+                <h3>Switzerland's Interbank Crypto Trading Venue</h3>
+                <p>RULEMATCH operates as a market operator for spot trading of cryptocurrencies, serving supervised financial institutions exclusively. Powered by Nasdaq technology, it delivers institutional-grade execution with minimal counterparty risk.</p>
+                <div class="venue-stats">
+                    <div class="venue-stat">
+                        <div class="venue-stat-value">25μs</div>
+                        <div class="venue-stat-label">Median Execution Latency</div>
+                    </div>
+                    <div class="venue-stat">
+                        <div class="venue-stat-value">T+1</div>
+                        <div class="venue-stat-label">Settlement Cycle</div>
+                    </div>
+                    <div class="venue-stat">
+                        <div class="venue-stat-value">23.5h</div>
+                        <div class="venue-stat-label">Daily Trading Window</div>
+                    </div>
+                    <div class="venue-stat">
+                        <div class="venue-stat-value">CLOB</div>
+                        <div class="venue-stat-label">Central Limit Order Book</div>
+                    </div>
+                </div>
+            </div>
+            <div class="venue-features">
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Trading pairs: BTC/USD, ETH/USD, USDC/USD</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Nasdaq matching engine and market surveillance</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Liquidity from regulated market makers (Flow Traders, tradias)</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Fiat held in fiduciary accounts at AA+-rated Swiss bank</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Crypto custody via Ripple Custody (IBM FIPS 140-2 Level 4 HSM)</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Multilateral netting reduces settlement transactions</span>
+                </div>
+                <div class="venue-feature">
+                    <svg class="venue-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span class="venue-feature-text">Connectivity: FIX 4.4/5.0SP2, ITCH/OUCH, Web GUI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Clients -->
+    <section class="target-clients">
+        <p class="section-label">Who It's For</p>
+        <h2 class="section-title">Designed for Institutional Participants</h2>
+        <div class="clients-grid">
+            <div class="client-type">
+                <svg class="client-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+                </svg>
+                <h4>Banks & Brokers</h4>
+            </div>
+            <div class="client-type">
+                <svg class="client-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                <h4>Asset Managers</h4>
+            </div>
+            <div class="client-type">
+                <svg class="client-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M16 8v8M12 11v5M8 14v2M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+                </svg>
+                <h4>Hedge Funds</h4>
+            </div>
+            <div class="client-type">
+                <svg class="client-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <h4>Trading Firms</h4>
+            </div>
+            <div class="client-type">
+                <svg class="client-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                </svg>
+                <h4>Market Makers</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>Ready to Access RULEMATCH?</h2>
+            <p>Get in touch with our team to discuss sponsored access, onboarding requirements, and trading terms.</p>
+            <a href="https://www.dlt-finance.com/contact" class="cta-button">
+                Get In Touch
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.dlt-finance.com" class="footer-logo">
+                <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#a78bfa" opacity="0.2"/>
+                    <path d="M20 4L4 12l16 8 16-8-16-8z" fill="#a78bfa"/>
+                    <path d="M4 12v16l16 8V20L4 12z" fill="#7c3aed"/>
+                    <path d="M36 12v16l-16 8V20l16-8z" fill="#6d28d9"/>
+                </svg>
+                <span style="font-family: var(--font-display); font-weight: 600;">DLT Finance</span>
+            </a>
+            <div class="footer-links">
+                <a href="https://www.dlt-finance.com/legal">Legal</a>
+                <a href="https://www.dlt-finance.com/data-privacy">Data Privacy</a>
+                <a href="https://www.dlt-finance.com/contact">Contact</a>
+            </div>
+            <p class="footer-copy">© 2026 DLT Finance AG · Frankfurt am Main</p>
+        </div>
+    </footer>
+</body>
+</html>
